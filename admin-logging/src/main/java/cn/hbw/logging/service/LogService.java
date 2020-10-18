@@ -1,5 +1,8 @@
 package cn.hbw.logging.service;
 
+import cn.hbw.logging.domain.Log;
+import org.aspectj.lang.ProceedingJoinPoint;
+
 /**
  * @InterfaceName LogService
  * @Description
@@ -8,4 +11,5 @@ package cn.hbw.logging.service;
  * @Version V1.0
  **/
 public interface LogService {
+    void save(String aa, String ip, ProceedingJoinPoint joinPoint, Log log);
 }
