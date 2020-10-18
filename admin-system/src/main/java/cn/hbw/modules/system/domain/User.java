@@ -23,6 +23,7 @@ public class User extends BaseEntity implements Serializable {
     private Long id;
 
     private String username;
+
     private String password;
 
 }

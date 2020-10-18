@@ -6,10 +6,10 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * @ClassNameConfigAdapter
- * @Description
+ * @ClassName ConfigAdapter
+ * @Description 跨域配置
  * @Author zzj
- * @Date2020/10/18
+ * @Date 2020/10/18
  * @Version V1.0
  **/
 @Configuration

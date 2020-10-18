@@ -9,10 +9,10 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 /**
- * @ClassNameBaseEntity
+ * @ClassName: BaseEntity
  * @Description
  * @Author zzj
- * @Date2020/10/18
+ * @Date 2020/10/18
  * @Version V1.0
  **/
 @Getter
