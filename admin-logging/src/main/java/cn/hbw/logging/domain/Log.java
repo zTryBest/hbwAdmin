@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 @Data
 @TableName("hbw_log")
 @NoArgsConstructor
-public class Log implements Serializable {
+public class  Log implements Serializable {
     @TableId(type = IdType.AUTO)
     private Long id;
 

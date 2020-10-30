@@ -52,6 +52,6 @@ public class LogAspect {
         HttpServletRequest request = RequestHolder.getHttpServletRequest();
         logService.save("aa", StringUtils.getIp(request),joinPoint,log);
 
-        return  "adf";
+        return  result;
     }
 }

@@ -19,11 +19,37 @@ import java.io.Serializable;
 @Data
 @TableName("hbw_user")
 public class User extends BaseEntity implements Serializable {
-    @TableId(type = IdType.AUTO)
-    private Long id;
 
-    private String username;
+    private Long userId;
+
+    private String empNumber;
+
+    private String name;
 
     private String password;
 
+    private String salt;
+
+    private Long deptId;
+
+    private String picture;
+
+    private String sex;
+
+    private String phoneNumber;
+
+    private String educationLevel;
+
+    private String politicalLandscape;
+
+    private String idCard;
+
+    private String nation;
+
+    private Boolean locked;
+
+    private String status;
+
+    private String delFlag;
 }
+

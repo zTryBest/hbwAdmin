@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Method;
@@ -26,6 +27,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class LogServiceImpl implements LogService {
     private final LogMapper logMapper;
+    @Async
     @Override
     public void save(String aa, String ip, ProceedingJoinPoint joinPoint, Log log) {
 
@@ -36,7 +38,7 @@ public class LogServiceImpl implements LogService {
         StringBuilder param = new StringBuilder();
         List<Object> objects = new ArrayList<>(Arrays.asList(joinPoint.getArgs()));
         for (Object object : objects) {
-            param.append(objects).append(" ");
+            param.append(object).append(" ");
         }
         if (log!=null){
             log.setDescription(aopLog.value());

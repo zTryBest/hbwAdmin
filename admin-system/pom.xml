@@ -12,6 +12,9 @@
     <artifactId>admin-system</artifactId>
     <name>后台管理模块</name>
 
+    <properties>
+        <jjwt.version>0.11.1</jjwt.version>
+    </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
@@ -19,13 +22,27 @@
 
         <dependency>
             <groupId>cn.hbw</groupId>
-            <artifactId>admin-common</artifactId>
+            <artifactId>admin-logging</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 
 
-        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+        <!-- jwt -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>${jjwt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>${jjwt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <version>${jjwt.version}</version>
+        </dependency>
 
 
 

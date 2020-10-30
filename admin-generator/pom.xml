@@ -9,15 +9,20 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <name>日志模块</name>
-    <artifactId>admin-logging</artifactId>
+    <artifactId>admin-generator</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>cn.hbw</groupId>
-            <artifactId>admin-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>3.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.30</version>
         </dependency>
     </dependencies>
+
 
 </project>
