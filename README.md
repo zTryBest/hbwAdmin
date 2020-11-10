@@ -4,5 +4,5 @@
 采用技术： SpringBoot + mybatis-plus 
 
 ----
-mybatis-plus 采用Xml方式开发，因为会有包装类返回值等，自动生成代码。
+mybatis-plus 采用注解方式开发，个人不喜欢写配置文件。
 
