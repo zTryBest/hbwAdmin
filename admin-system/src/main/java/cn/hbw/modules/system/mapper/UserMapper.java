@@ -26,8 +26,10 @@ public interface UserMapper extends BaseMapper<User> {
      */
     @Results(value = {
             @Result(column = "user_id",property = "userId"),
+            @Result(column = "dept_id",property = "deptId"),
             @Result(column = "user_id",property = "jobs",many = @Many(select = "cn.hbw.modules.system.mapper.JobMapper.selectSimpleDtoByUserId")),
-            @Result(column = "user_id",property = "roles",many = @Many(select = "cn.hbw.modules.system.mapper.RoleMapper.selectSimpleDtoByUserId"))
+            @Result(column = "user_id",property = "roles",many = @Many(select = "cn.hbw.modules.system.mapper.RoleMapper.selectSimpleDtoByUserId")),
+            @Result(column = "dept_id",property = "dept",one = @One(select = "cn.hbw.modules.system.mapper.DeptMapper.selectSimpleDtoByDeptId"))
     })
     @Select("select * from hbw_user ${ew.customSqlSegment}")
     UserDto selectByWrapper(@Param("ew") Wrapper wrapper);

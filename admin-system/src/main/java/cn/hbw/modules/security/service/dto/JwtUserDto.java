@@ -3,6 +3,7 @@ package cn.hbw.modules.security.service.dto;
 
 import cn.hbw.modules.system.service.dto.UserDto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,40 +26,39 @@ import java.util.stream.Collectors;
  **/
 @Slf4j
 @Getter
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class JwtUserDto implements UserDetails {
 
     private final UserDto user;
 
     private final List<Long> dataScopes;
 
-    @JsonIgnore
     private final List<GrantedAuthority> authorities;
 
-    public Set<String> getRoles(){
+    public Set<String> getPermissions(){
         return authorities.stream().map(GrantedAuthority::getAuthority).collect(Collectors.toSet());
     }
 
+    @JsonIgnore
     @Override
     public String getPassword() {
         return user.getPassword();
     }
-
     @Override
     public String getUsername() {
-        return user.getName();
+        return user.getEmpNumber();
     }
-
+    @JsonIgnore
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
-
+    @JsonIgnore
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
-
+    @JsonIgnore
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
@@ -66,6 +66,6 @@ public class JwtUserDto implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return user.getLocked();
+        return true;
     }
 }

@@ -50,7 +50,7 @@ public class LogAspect {
         Log log = new Log("INFO", System.currentTimeMillis() - currentTime.get());
         currentTime.remove();
         HttpServletRequest request = RequestHolder.getHttpServletRequest();
-        logService.save("aa", StringUtils.getIp(request),joinPoint,log);
+        logService.save( StringUtils.getIp(request),joinPoint,log);
 
         return  result;
     }

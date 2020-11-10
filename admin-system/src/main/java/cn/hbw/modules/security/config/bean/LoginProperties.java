@@ -16,7 +16,7 @@ public class LoginProperties {
     /**
      * 账号是否单用户登录
      */
-    private boolean singleLogin = false;
+    private boolean singleLogin;
 
 
     /**

@@ -5,7 +5,10 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -18,6 +21,8 @@ import java.io.Serializable;
  **/
 @Data
 @TableName("hbw_user")
+@NoArgsConstructor
+@AllArgsConstructor
 public class User extends BaseEntity implements Serializable {
 
     private Long userId;
@@ -26,6 +31,7 @@ public class User extends BaseEntity implements Serializable {
 
     private String name;
 
+    @JsonIgnore
     private String password;
 
     private String salt;

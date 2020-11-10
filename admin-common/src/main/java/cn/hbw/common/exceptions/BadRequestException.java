@@ -24,4 +24,7 @@ public class BadRequestException extends RuntimeException{
         this.status = status.value();
     }
 
+    public Integer getStatus() {
+        return status;
+    }
 }

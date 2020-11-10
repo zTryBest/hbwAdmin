@@ -1,6 +1,7 @@
 package cn.hbw.modules.system.service.impl;
 
 import cn.hbw.common.Constants;
+import cn.hbw.common.util.HbwConstant;
 import cn.hbw.common.util.StringUtils;
 import cn.hbw.modules.system.mapper.MenuMapper;
 import cn.hbw.modules.system.mapper.RoleMapper;
@@ -43,9 +44,9 @@ public class RoleServiceImpl implements RoleService {
         Set<String> permissions = new HashSet<>();
         // 获取角色集合
         List<RoleSimpleDto> roles = userDto.getRoles();
-        List<RoleSimpleDto> collect = roles.stream().filter(item -> Constants.ADMIN.equals(item.getName())).collect(Collectors.toList());
+        List<RoleSimpleDto> collect = roles.stream().filter(item -> HbwConstant.ADMIN.equals(item.getName())).collect(Collectors.toList());
         if (!CollectionUtils.isEmpty(collect)){
-            permissions.add(Constants.ADMIN);
+            permissions.add(HbwConstant.ADMIN);
             return permissions.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
         }
         permissions = roles.stream().flatMap(role -> role.getMenus().stream())

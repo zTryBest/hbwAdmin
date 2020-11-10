@@ -1,5 +1,7 @@
 package cn.hbw.logging.service.impl;
 
+import cn.hbw.common.exceptions.BadRequestException;
+import cn.hbw.common.util.SecurityUtils;
 import cn.hbw.logging.domain.Log;
 import cn.hbw.logging.mapper.LogMapper;
 import cn.hbw.logging.service.LogService;
@@ -12,6 +14,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Method;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -29,7 +32,7 @@ public class LogServiceImpl implements LogService {
     private final LogMapper logMapper;
     @Async
     @Override
-    public void save(String aa, String ip, ProceedingJoinPoint joinPoint, Log log) {
+    public void save(String ip, ProceedingJoinPoint joinPoint, Log log) {
 
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
@@ -44,8 +47,20 @@ public class LogServiceImpl implements LogService {
             log.setDescription(aopLog.value());
         }
         assert log != null;
+        log.setCreateTime(LocalDateTime.now());
         log.setRequestIp(ip);
         log.setLogType(aopLog.type().getValue());
+        String username = getUsername();
+        log.setUsername(username);
         logMapper.insert(log);
+    }
+
+    private String getUsername() {
+
+        try{
+           return SecurityUtils.getCurrentUser().getUsername();
+        }catch (BadRequestException e){
+            return "";
+        }
     }
 }

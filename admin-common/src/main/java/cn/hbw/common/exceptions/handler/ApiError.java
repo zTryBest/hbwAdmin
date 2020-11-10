@@ -1,7 +1,9 @@
 package cn.hbw.common.exceptions.handler;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
@@ -13,6 +15,7 @@ import java.time.LocalDateTime;
  * @Version V1.0
  **/
 @Data
+@AllArgsConstructor
 public class ApiError {
     private Integer status = 400;
 
@@ -27,6 +30,12 @@ public class ApiError {
 
     public static ApiError error(String message){
         ApiError apiError = new ApiError();
+        apiError.setMsg(message);
+        return apiError;
+    }
+    public static ApiError error(Integer status, String message){
+        ApiError apiError = new ApiError();
+        apiError.setStatus(status);
         apiError.setMsg(message);
         return apiError;
     }

@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService {
         wrapper.eq("emp_number",username);
         UserDto userDto = userMapper.selectByWrapper(wrapper);
         if (userDto==null){
-            throw new EntityNotFoundException(User.class,"name",username);
+            throw new EntityNotFoundException(User.class,"emp_number",username);
         }
         else {
             return userDto;

@@ -32,7 +32,7 @@ public class SecurityProperties {
     /**
      *  token令牌有效时间 (单位: 秒)
      */
-    private String tokenValidityInSeconds;
+    private Long tokenValidityInSeconds;
 
     /**
      * 在线用户 key , 存放 redis

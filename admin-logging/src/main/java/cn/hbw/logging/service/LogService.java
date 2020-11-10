@@ -11,5 +11,5 @@ import org.aspectj.lang.ProceedingJoinPoint;
  * @Version V1.0
  **/
 public interface LogService {
-    void save(String aa, String ip, ProceedingJoinPoint joinPoint, Log log);
+    void save( String ip, ProceedingJoinPoint joinPoint, Log log);
 }

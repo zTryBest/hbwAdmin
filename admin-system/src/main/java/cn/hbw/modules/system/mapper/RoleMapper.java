@@ -33,7 +33,7 @@ public interface RoleMapper extends BaseMapper<Role> {
     List<RoleSimpleDto> selectSimpleDtoByUserId(Long id);
 
     /**
-     * 用户 id 查询角色
+     * 用户 id 查询角色集合
      * @param id
      * @return
      */

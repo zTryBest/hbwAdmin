@@ -30,6 +30,8 @@
         <log4jdbc.version>1.16</log4jdbc.version>
         <swagger.version>2.9.2</swagger.version>
         <commons-pool2.version>2.5.0</commons-pool2.version>
+        <fastjson.version>1.2.70</fastjson.version>
+
     </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
@@ -56,7 +58,12 @@
             <artifactId>jackson-core</artifactId>
             <version>2.11.1</version>
         </dependency>
-
+        <!-- fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
 
         <!-- excel工具 -->
         <dependency>

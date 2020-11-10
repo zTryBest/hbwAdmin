@@ -27,7 +27,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @version v1.0
  * @date 2020/10/29 15:03
  **/
-//@Service("userDetailsService")
+@Service("userDetailsService")
 @RequiredArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {
     private final UserService userService;
@@ -64,7 +64,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 throw new UsernameNotFoundException("");
             }
             else {
-                if (userDto.getLocked()){
+                if (userDto.getLocked() != null && userDto.getLocked()){
                     throw new BadRequestException("账号被锁定！");
                 }
                jwtUserDto = new JwtUserDto(

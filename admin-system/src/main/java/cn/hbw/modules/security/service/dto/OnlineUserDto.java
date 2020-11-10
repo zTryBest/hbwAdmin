@@ -1,8 +1,10 @@
 package cn.hbw.modules.security.service.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -16,7 +18,8 @@ import java.util.Date;
  **/
 @Data
 @NoArgsConstructor
-public class OnlineUserDto {
+@AllArgsConstructor
+public class OnlineUserDto implements Serializable {
     /**
      * 用户名
      */
@@ -25,11 +28,6 @@ public class OnlineUserDto {
      * 岗位
      */
     private String dept;
-
-    /**
-     * 浏览器
-     */
-    private String browser;
 
     /**
      * IP

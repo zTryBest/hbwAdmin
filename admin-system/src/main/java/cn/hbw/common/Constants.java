@@ -10,5 +10,4 @@ package cn.hbw.common;
  * @date 2020/10/30 9:40
  **/
 public class Constants {
-    public static final String ADMIN = "管理员";
 }

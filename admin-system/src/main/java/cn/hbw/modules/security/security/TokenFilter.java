@@ -64,14 +64,14 @@ public class TokenFilter extends GenericFilterBean {
             }
 
         }
-        doFilter(servletRequest,servletResponse,filterChain);
+        filterChain.doFilter(servletRequest, servletResponse);
     }
 
     private String resolveToken(HttpServletRequest request) {
         String header = request.getHeader(properties.getHeader());
         if (Strings.hasText(header) && header.startsWith(properties.getTokenStartWith())){
-            header.replace(properties.getTokenStartWith(),"");
-            return header;
+            return header.replace(properties.getTokenStartWith(),"");
+
         }
         else {
             logger.debug("非法token: {}", new BadRequestException(header));

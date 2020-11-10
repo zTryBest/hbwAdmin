@@ -23,6 +23,9 @@ public class HbwConstant {
      */
     public static final String MAC = "mac";
 
+    public static final String ADMIN = "管理员";
+
+
     /**
      * 常用接口
      */
